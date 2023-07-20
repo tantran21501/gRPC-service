@@ -2,7 +2,6 @@ package com.vinsguru.server;
 
 import java.util.Map;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -31,6 +30,12 @@ public class AccountDatabase {
     }
     public static Integer deductBalance(int accountId, int amount){
         return MAP.computeIfPresent(accountId, (k,v) -> v -amount);
+    }
+
+    public static void showAccountDetail(){
+        System.out.println(
+            MAP
+        );
     }
 
 }

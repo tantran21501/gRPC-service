@@ -24,6 +24,26 @@ public final class BankServiceOuterClass {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_Balance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Balances_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Balances_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_WithDrawRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_WithDrawRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_DepositRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_DepositRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_Money_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_Money_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -35,9 +55,16 @@ public final class BankServiceOuterClass {
     java.lang.String[] descriptorData = {
       "\n\022bank-service.proto\"-\n\023BalanceCheckRequ" +
       "est\022\026\n\016account_number\030\001 \001(\005\"\031\n\007Balance\022\016" +
-      "\n\006amount\030\001 \001(\0052;\n\013BankService\022,\n\ngetBala" +
-      "nce\022\024.BalanceCheckRequest\032\010.BalanceB\027\n\023c" +
-      "om.vinsguru.modelsP\001b\006proto3"
+      "\n\006amount\030\001 \001(\005\"&\n\010Balances\022\032\n\010balances\030\001" +
+      " \003(\0132\010.Balance\"9\n\017WithDrawRequest\022\026\n\016acc" +
+      "ount_number\030\001 \001(\005\022\016\n\006amount\030\002 \001(\005\"8\n\016Dep" +
+      "ositRequest\022\026\n\016account_number\030\001 \001(\005\022\016\n\006a" +
+      "mount\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\214\001\n\013" +
+      "BankService\022-\n\ngetBalance\022\024.BalanceCheck" +
+      "Request\032\t.Balances\022&\n\010withdraw\022\020.WithDra" +
+      "wRequest\032\006.Money0\001\022&\n\007deposit\022\017.DepositR" +
+      "equest\032\010.Balance(\001B\027\n\023com.vinsguru.model" +
+      "sP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -55,6 +82,30 @@ public final class BankServiceOuterClass {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_Balance_descriptor,
         new java.lang.String[] { "Amount", });
+    internal_static_Balances_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_Balances_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Balances_descriptor,
+        new java.lang.String[] { "Balances", });
+    internal_static_WithDrawRequest_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_WithDrawRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_WithDrawRequest_descriptor,
+        new java.lang.String[] { "AccountNumber", "Amount", });
+    internal_static_DepositRequest_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_DepositRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_DepositRequest_descriptor,
+        new java.lang.String[] { "AccountNumber", "Amount", });
+    internal_static_Money_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_Money_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_Money_descriptor,
+        new java.lang.String[] { "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
