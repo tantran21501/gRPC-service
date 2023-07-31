@@ -59,12 +59,12 @@ public final class BankServiceOuterClass {
       " \003(\0132\010.Balance\"9\n\017WithDrawRequest\022\026\n\016acc" +
       "ount_number\030\001 \001(\005\022\016\n\006amount\030\002 \001(\005\"8\n\016Dep" +
       "ositRequest\022\026\n\016account_number\030\001 \001(\005\022\016\n\006a" +
-      "mount\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\214\001\n\013" +
-      "BankService\022-\n\ngetBalance\022\024.BalanceCheck" +
-      "Request\032\t.Balances\022&\n\010withdraw\022\020.WithDra" +
-      "wRequest\032\006.Money0\001\022&\n\007deposit\022\017.DepositR" +
-      "equest\032\010.Balance(\001B\027\n\023com.vinsguru.model" +
-      "sP\001b\006proto3"
+      "mount\030\002 \001(\005\"\026\n\005Money\022\r\n\005value\030\001 \001(\0052\213\001\n\013" +
+      "BankService\022,\n\ngetBalance\022\024.BalanceCheck" +
+      "Request\032\010.Balance\022&\n\010withdraw\022\020.WithDraw" +
+      "Request\032\006.Money0\001\022&\n\007deposit\022\017.DepositRe" +
+      "quest\032\010.Balance(\001B\027\n\023com.vinsguru.models" +
+      "P\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

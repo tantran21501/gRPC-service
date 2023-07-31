@@ -1,4 +1,4 @@
-package com.vinsguru.server;
+package com.vinsguru.server.rpctypes;
 
 import com.vinsguru.models.TransferRequest;
 import com.vinsguru.models.TransferResponse;

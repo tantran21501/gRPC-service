@@ -23,9 +23,10 @@ message DepositRequest {
 message Money {
     int32 value =1;
 }
+
 service BankService{
     //unary: Client send 1 request, server return 1 message
-    rpc getBalance(BalanceCheckRequest) returns (Balances);
+    rpc getBalance(BalanceCheckRequest) returns (Balance);
     // server-side streaming: Client send 1 request, server return stream message. Ex: search products on market
     rpc withdraw(WithDrawRequest) returns (stream Money);
     // client-side streaming : Client send stream request, server return 1 message. Ex: Upload file.

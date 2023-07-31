@@ -16,28 +16,28 @@ public final class BankServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.vinsguru.models.BalanceCheckRequest,
-      com.vinsguru.models.Balances> getGetBalanceMethod;
+      com.vinsguru.models.Balance> getGetBalanceMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "getBalance",
       requestType = com.vinsguru.models.BalanceCheckRequest.class,
-      responseType = com.vinsguru.models.Balances.class,
+      responseType = com.vinsguru.models.Balance.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.vinsguru.models.BalanceCheckRequest,
-      com.vinsguru.models.Balances> getGetBalanceMethod() {
-    io.grpc.MethodDescriptor<com.vinsguru.models.BalanceCheckRequest, com.vinsguru.models.Balances> getGetBalanceMethod;
+      com.vinsguru.models.Balance> getGetBalanceMethod() {
+    io.grpc.MethodDescriptor<com.vinsguru.models.BalanceCheckRequest, com.vinsguru.models.Balance> getGetBalanceMethod;
     if ((getGetBalanceMethod = BankServiceGrpc.getGetBalanceMethod) == null) {
       synchronized (BankServiceGrpc.class) {
         if ((getGetBalanceMethod = BankServiceGrpc.getGetBalanceMethod) == null) {
           BankServiceGrpc.getGetBalanceMethod = getGetBalanceMethod =
-              io.grpc.MethodDescriptor.<com.vinsguru.models.BalanceCheckRequest, com.vinsguru.models.Balances>newBuilder()
+              io.grpc.MethodDescriptor.<com.vinsguru.models.BalanceCheckRequest, com.vinsguru.models.Balance>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "getBalance"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.vinsguru.models.BalanceCheckRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.vinsguru.models.Balances.getDefaultInstance()))
+                  com.vinsguru.models.Balance.getDefaultInstance()))
               .setSchemaDescriptor(new BankServiceMethodDescriptorSupplier("getBalance"))
               .build();
         }
@@ -162,7 +162,7 @@ public final class BankServiceGrpc {
      * </pre>
      */
     default void getBalance(com.vinsguru.models.BalanceCheckRequest request,
-        io.grpc.stub.StreamObserver<com.vinsguru.models.Balances> responseObserver) {
+        io.grpc.stub.StreamObserver<com.vinsguru.models.Balance> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getGetBalanceMethod(), responseObserver);
     }
 
@@ -220,7 +220,7 @@ public final class BankServiceGrpc {
      * </pre>
      */
     public void getBalance(com.vinsguru.models.BalanceCheckRequest request,
-        io.grpc.stub.StreamObserver<com.vinsguru.models.Balances> responseObserver) {
+        io.grpc.stub.StreamObserver<com.vinsguru.models.Balance> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getGetBalanceMethod(), getCallOptions()), request, responseObserver);
     }
@@ -269,7 +269,7 @@ public final class BankServiceGrpc {
      *unary: Client send 1 request, server return 1 message
      * </pre>
      */
-    public com.vinsguru.models.Balances getBalance(com.vinsguru.models.BalanceCheckRequest request) {
+    public com.vinsguru.models.Balance getBalance(com.vinsguru.models.BalanceCheckRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getGetBalanceMethod(), getCallOptions(), request);
     }
@@ -307,7 +307,7 @@ public final class BankServiceGrpc {
      *unary: Client send 1 request, server return 1 message
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.vinsguru.models.Balances> getBalance(
+    public com.google.common.util.concurrent.ListenableFuture<com.vinsguru.models.Balance> getBalance(
         com.vinsguru.models.BalanceCheckRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getGetBalanceMethod(), getCallOptions()), request);
@@ -337,7 +337,7 @@ public final class BankServiceGrpc {
       switch (methodId) {
         case METHODID_GET_BALANCE:
           serviceImpl.getBalance((com.vinsguru.models.BalanceCheckRequest) request,
-              (io.grpc.stub.StreamObserver<com.vinsguru.models.Balances>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.vinsguru.models.Balance>) responseObserver);
           break;
         case METHODID_WITHDRAW:
           serviceImpl.withdraw((com.vinsguru.models.WithDrawRequest) request,
@@ -369,7 +369,7 @@ public final class BankServiceGrpc {
           io.grpc.stub.ServerCalls.asyncUnaryCall(
             new MethodHandlers<
               com.vinsguru.models.BalanceCheckRequest,
-              com.vinsguru.models.Balances>(
+              com.vinsguru.models.Balance>(
                 service, METHODID_GET_BALANCE)))
         .addMethod(
           getWithdrawMethod(),

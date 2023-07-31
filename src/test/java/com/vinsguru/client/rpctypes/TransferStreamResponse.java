@@ -1,4 +1,4 @@
-package com.vinsguru.client;
+package com.vinsguru.client.rpctypes;
 
 import com.vinsguru.models.TransferResponse;
 import io.grpc.stub.StreamObserver;

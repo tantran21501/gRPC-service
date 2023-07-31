@@ -1,13 +1,10 @@
-package com.vinsguru.client;
+package com.vinsguru.client.rpctypes;
 
-import com.google.common.util.concurrent.Uninterruptibles;
 import com.vinsguru.models.Balance;
 import com.vinsguru.models.BalanceCheckRequest;
 import com.vinsguru.models.BankServiceGrpc;
 import com.vinsguru.models.DepositRequest;
-import com.vinsguru.models.Money;
 import com.vinsguru.models.WithDrawRequest;
-import com.vinsguru.server.BankService;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
@@ -16,7 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.TimeUnit;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class BankClientTest {
@@ -32,11 +28,10 @@ public class BankClientTest {
                 .build();
             this.blockingStub = BankServiceGrpc.newBlockingStub(managedChannel);
             this.bankServiceStub = BankServiceGrpc.newStub(managedChannel);
-
         }
 
     @Test
-    public void balanceTest() {
+    public void balanceTest(){
         BalanceCheckRequest request = BalanceCheckRequest.newBuilder()
             .setAccountNumber(2).build();
         Balance balance = this.blockingStub.getBalance(request);

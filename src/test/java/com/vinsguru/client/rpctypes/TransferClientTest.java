@@ -1,12 +1,10 @@
-package com.vinsguru.client;
+package com.vinsguru.client.rpctypes;
 
-import com.vinsguru.models.BankServiceGrpc;
 import com.vinsguru.models.TransferRequest;
 import com.vinsguru.models.TransferServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.stub.StreamObserver;
-import org.checkerframework.checker.units.qual.C;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

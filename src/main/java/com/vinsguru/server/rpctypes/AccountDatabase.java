@@ -1,4 +1,4 @@
-package com.vinsguru.server;
+package com.vinsguru.server.rpctypes;
 
 import java.util.Map;
 import java.util.function.Function;

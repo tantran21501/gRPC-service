@@ -1,4 +1,4 @@
-package com.vinsguru.client;
+package com.vinsguru.client.rpctypes;
 
 import com.vinsguru.models.Balance;
 import io.grpc.stub.StreamObserver;
