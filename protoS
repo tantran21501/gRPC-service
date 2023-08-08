@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package com.example.grpcameria;
+option java_multiple_files = true;
+option java_package = "com.example.grpcameria";
+
+message ContractInfo{
+  int32 id = 1;
+  string document = 2;
+  repeated OffsetInfo offset = 3;
+}
+
+message CreateContractInfo{
+  string document = 2;
+  repeated OffsetInfo offset = 3;
+}
+
+message UpdateContractInfo{
+  int32 id = 1;
+  repeated OffsetInfo offset = 3;
+}
+
+message GetContractInfoRequest {
+  int32 id = 1;
+}
+
+message OffsetInfo {
+  int32 first = 1;
+  int32 last = 2;
+  int32 partyIndex = 3;
+  string articleName = 4;
+}
+
+message EmptyObject{
+}
+
+service HighLightTextService{
+  rpc CreateContract (CreateContractInfo) returns (ContractInfo) {}
+  rpc UpdateContract (UpdateContractInfo) returns (ContractInfo) {}
+  rpc GetContractInfo (GetContractInfoRequest) returns (ContractInfo) {}
+
+}
