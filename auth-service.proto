@@ -1,0 +1,19 @@
+syntax = "proto3";
+option java_multiple_files = true;
+option java_package = "org.example.models";
+
+message User {
+  string email = 1;
+  string password = 2;
+}
+message AuthResponse {
+  string email = 1;
+  string password = 2;
+  int64 role = 3;
+}
+
+service AuthFirebaseService{
+  //unary: Client send 1 request, server return 1 message
+  rpc auth(User) returns (AuthResponse);
+
+}
