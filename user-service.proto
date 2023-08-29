@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+
+
+package com.example.grpcameria;
+option java_multiple_files = true;
+
+enum CreateStatus {
+    FAIL = 0;
+    COMPLETE = 1;
+}
+message User {
+    int32 id = 1;
+    string mail = 2;
+    int64 role = 3;
+    string password = 4;
+}
+
+message AuthenticationRequest {
+    string mail = 1;
+    string password = 2;
+}
+
+message CreateUserRequest {
+    string mail = 1;
+    string password = 2;
+    int64 role = 3;
+}
+
+message AuthenticationResponse {
+    string email = 1;
+    string password = 2;
+    int64 role = 3;
+    string token = 4;
+    string refreshToken = 5;
+    bool register = 6;
+}
+message CreateResponse {
+    CreateStatus status = 1;
+    User user = 2  ;
+}
+service UserService {
+    rpc authentication(AuthenticationRequest) returns (AuthenticationResponse) {};
+    rpc addUser(CreateUserRequest) returns (CreateResponse);
+}
