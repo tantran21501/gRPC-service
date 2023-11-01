@@ -12,7 +12,7 @@ service LegalonDeveloperAdminService {
 // ひな型一覧情報csvアップロードによる一括更新・追加のリクエスト
 message UploadTemplateForListCsvRequest {
   // 一括アップロードテンプレート用のCSVファイル
-  bytes csv_file = 1;
+  string csv_file = 1;
 }
 
 // ひな型一覧情報csvアップロードによる一括更新・追加のレスポンス
