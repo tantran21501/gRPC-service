@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.vinsguru.models";
+
+// LegalDevelopmentAdminService は、LegalDevelopmentAdmin などのリソースを扱う Fundamental Service。
+service LegalonDeveloperAdminService {
+  // ひな型一覧情報csvアップロードによる一括更新・追加
+  rpc UploadTemplateForListCsv(UploadTemplateForListCsvRequest) returns (UploadTemplateForListCsvResponse);
+}
+
+// ひな型一覧情報csvアップロードによる一括更新・追加のリクエスト
+message UploadTemplateForListCsvRequest {
+  // 一括アップロードテンプレート用のCSVファイル
+  bytes csv_file = 1;
+}
+
+// ひな型一覧情報csvアップロードによる一括更新・追加のレスポンス
+message UploadTemplateForListCsvResponse {
+  // エラーレコードの数
+  optional uint32 error_records = 1;
+  // 作成レコードの数
+  optional uint32 insert_records = 2;
+  // 更新レコードの数
+  optional uint32 update_records = 3;
+  // バリデーションチェックエラーのJsonファイル
+  optional bytes error_json_file = 4;
+}
