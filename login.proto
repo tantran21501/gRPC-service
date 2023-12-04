@@ -1,0 +1,90 @@
+syntax = "proto3";
+
+package login.v1;
+
+import "google/protobuf/timestamp.proto";
+
+// LoginServiceはLoginオブジェクトに対する操作を提供する。
+service LoginService {
+  // ユーザーの認証とシステムへのログイン
+  rpc Login(LoginRequest) returns (LoginResponse);
+  rpc InviteUser(InviteUserRequest) returns (InviteUserResponse);
+  rpc ChangePasswordAndEnableUser(ChangePasswordAndEnableUserRequest) returns (ChangePasswordAndEnableUserResponse);
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+  rpc GetAdminUsers(GetAdminUsersRequest) returns (GetAdminUserResponse);
+}
+
+enum Role {
+  ADMIN = 0;
+}
+
+enum Status {
+  ENABLED = 0;
+  INVITED = 1;
+  DISABLED = 2;
+}
+
+// メールアドレスやパスワードでログイン
+message LoginRequest {
+  // メールアドレス
+  string email = 1 ;
+}
+
+// 返すレスポンス
+message LoginResponse {
+  // admin user id
+  string admin_user_id = 1 ;
+  // name
+  string name = 2;
+  // email
+  string email = 3 ;
+  // role user
+  Role type = 4;
+  // status user
+  Status status = 5;
+  // create by
+  string create_by = 6;
+  // update by
+  string update_by = 7 ;
+  // create time
+  google.protobuf.Timestamp create_time = 8;
+  // update time
+  google.protobuf.Timestamp update_time = 9;
+}
+
+// Invite user request
+message InviteUserRequest {
+  // email
+  string email = 1 ;
+  // display name
+  string display_name = 2;
+}
+
+// Invite user response
+message InviteUserResponse {}
+
+// Change password and enable user request
+message ChangePasswordAndEnableUserRequest {
+  string old_password = 1;
+  string new_password = 2;
+  string user_id = 3 ;
+}
+
+// Change password and enable user response
+message ChangePasswordAndEnableUserResponse {}
+
+// Logout request
+message LogoutRequest {
+  string user_id = 1;
+}
+
+// Logout response
+message LogoutResponse {}
+
+// Get admin user request
+message GetAdminUsersRequest {}
+
+// Get admin user response
+message GetAdminUserResponse {
+  repeated LoginResponse admin_users = 1;
+}
