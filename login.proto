@@ -2,7 +2,6 @@ syntax = "proto3";
 
 package login.v1;
 
-import "google/protobuf/timestamp.proto";
 
 // LoginServiceはLoginオブジェクトに対する操作を提供する。
 service LoginService {
@@ -47,9 +46,9 @@ message LoginResponse {
   // update by
   string update_by = 7 ;
   // create time
-  google.protobuf.Timestamp create_time = 8;
+  string create_time = 8;
   // update time
-  google.protobuf.Timestamp update_time = 9;
+  string update_time = 9;
 }
 
 // Invite user request
